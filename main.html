@@ -99,85 +99,7 @@ Youtube貼り付けここまで -->
         <!-- STAGE1クリア画面　ここまで -->
 
       </div>
-      <!-- STAGE1　ここまで -->
-
-        <!-- STAGE2　ここから -->
-      <div v-if="next['stage1']" id="sectionStage2" class="stage">
-
-        <!-- STAGE2問題セクション　ここから -->
-        <section class="section">
-          <div class="container">
-            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>夜の教室</h2>
-            <p class="text-center">二番にリストアップされた世界は夜の教室だった。<br>
-             ここは小学校の教室らしい、後ろの壁に飾ってある作品の絵がこっちを見ているように見える。<br>
-              、、誰かの忘れ物だろうか、一つの机に女の可愛い人形が置いてある。恐る恐るその場に行くと人形が「こんばんわ」と喋り出した。<br>
-              驚いて後ろに尻餅をつくと「ようやくきたのね、これあげる」とまた問題らしい物を渡してきた。<br>
-              どうやら今回はこの人形がメールに書いてあった主犯の仲間らしい。<br>
-              早く問題を解いてこの世界から早く出よう、、。<br>
-              渡された謎を解き、人形に回答を報告しよう。</p>
-            <p class="text-center">困ったときは、相棒に聞こう。</p>
-  
-            <div class="container">
-              <figure class="image__container">
-                <img src="assets/images/スクリーンショット 2021-09-11 1.40.02.png" alt="">
-              </figure>
-                
- <!--  YouTube貼り付け
-              <div class="youtube__container">
-                <div class="youtube">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/IRyJe-0Uie0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-              </div>
-Youtube貼り付けここまで -->
-                
-            </div>
-          </div>
-        </section>
-        <!-- STAGE2問題セクション　ここまで -->
-
-        <!-- STAGE2解答入力セクション　ここから -->
-        <section class="section bg-color--keycolor">
-          <div class="container">
-            <h2 class="section-title"><span class="section-title__stage">STAGE：3</span>「、、回答は？」</h2>
-            <!------------------------------------------------------------------------------------------------------------
-              解答入力欄のコンポーネントです。入力欄・送信ボタン・エラーメッセージを表示します。
-              v-bind:correct="correctAnswer['stage1']['q1']" は正解の解答を指します。
-              v-on:answer-input="answerInput($event, 'stage1', 1)" は送信ボタンをクリックした時の動作を決める関数です。
-              2番目、3番目の1引数 'stage1', 1 はstage1の1問目ということになります。
-              1番麺の引数 $event は正解、不正解の判定を受け取る変数です。
-              []、()の間違い、''の抜けがあると動きません。
-            ------------------------------------------------------------------------------------------------------------>
-            <answer-input v-bind:correct="correctAnswer['stage２']['q1']" v-on:answer-input="answerInput($event, 'stage2', 1)"></answer-input>
-
-            <a class="link-hint" href="hint2.html" target="hint2">相棒に相談してみる？ ></a>
-          </div>
-        </section>
-        <!-- STAGE2解答入力セクション　ここまで -->
-
-        <!-- STAGE2クリア画面　ここから -->
-        <!------------------------------------------------------------------------------------------------------
-          ステージを全問正解するとclear['stage1']がtrusになります。
-          v-if="clear['stage1']"はclear['stage1']がtrueになったら表示します。
-          v-bind:class="{isClear:clear['stage1']}"はclear['stage1']がtrueになったら「isClear」クラスを追加します。
-        -------------------------------------------------------------------------------------------------------->
-        <section v-if="clear['stage2']" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
-          <div class="container">
-            <div class="clear-message">
-              <div class="clear-message__title">STAGE：2  「あら、おめでとう」</div>
-              <div class="clear-message__content"> 後から物音がして少し振り返ってまた人形がいた位置を見ると人形はいなくなっていて鍵だけが置いてあった。<br>
-              
-                急いで次の世界へ行こう！</div>
-              <button v-on:click="nextStage('stage3')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
-            </div>
-          </div>
-        </section>
-        <!-- STAGE2クリア画面　ここまで -->
-
-      </div>
-      <!-- STAGE2　ここまで -->
-
-      
-      
+      <!-- STAGE1　ここまで -->      
       
       
       <!-- STAGE3　ここから -->
@@ -185,22 +107,19 @@ Youtube貼り付けここまで -->
         クリア画面の「次のステージへ」ボタンをクリックしたら表示します。
         v-if="next['stage1']"はnext['stage1']がtrueになったら表示します。
       ----------------------------------------------------------------------->
-      <div v-if="next['stage2']" id="sectionStage3" class="stage">
+      <div v-if="next['stage1']" id="sectionStage2" class="stage">
         <section>
           <div class="section">
             <div class="container">
-              <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：3</span>部活の時間</h2>
+              <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>部活の時間</h2>
               <p class="text-center">最後の世界は学校の体育館<br>
                ボールが落ちていてバレーやバスケットボールなどの部活をしているらしい。<br>
-                有名なスポーツ漫画の世界らしい。違いはすぐにわかった。主人公の相棒な立場のキャラクターが違う。<br>
-                すぐに目に入ったのであちらも正体がバレたことに気づいているだろう。<br>
-                反応は思ったより早かった「もうバレちゃった〜」と軽くいうと「もうわかってると思うから」と言って問題を渡してきた。<br>
-                リストアップされた世界はこれで最後これが終わればきっと何か変わるはず！問題に挑もう！</p>
+                有名なスポーツ漫画の世界らしい。違いwefekllllllllllはず！問題に挑もう！</p>
             </div>
           </div>
           <div class="stage-column__container section bg-color--keycolor">
             <div class="container">
-              <h2 class="section-title"><span class="section-title__stage">STAGE：3</span>キーワードを入力</h2>
+              <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>キーワードを入力</h2>
               <!-------------------------------------------------------------
                 class名"row"内のclass名"column"が横並びになります。
                 改行する場合は以下のように追加してください。
@@ -212,16 +131,16 @@ Youtube貼り付けここまで -->
               ------------------------------------------------------------->
               <div class="row">
 
-                <!-- STAGE3-1　ここから -->
+                <!-- STAGE2-1　ここから -->
                 <div class="column">
-                  <!-- STAGE3-1問題セクション　ここから -->
+                  <!-- STAGE2-1問題セクション　ここから -->
                   <figure class="image__container">
                     <img src="assets/images/stage.png" alt="">
                   </figure>
                   <!-- STAGE3-1問題セクション　ここまで -->
                   <!-- STAGE3-1解答入力セクション　ここから -->
-                  <answer-input v-bind:correct="correctAnswer['stage3']['q1']" v-on:answer-input="answerInput($event, 'stage3', 1)"></answer-input>
-                  <a class="link-hint" href="hint3.html" target="hint3">ヒントをみる ></a>
+                  <answer-input v-bind:correct="correctAnswer['stage2']['q1']" v-on:answer-input="answerInput($event, 'stage2', 1)"></answer-input>
+                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
                   <!-- STAGE3-1解答入力セクション　ここまで -->
                 </div><!-- /.column -->
                 <!-- STAGE3-1　ここまで -->
@@ -267,13 +186,13 @@ Youtube貼り付けここまで -->
         </section>
 
         <!-- STAGE3クリア画面　ここから -->
-        <section v-if="clear['stage3']" v-bind:class="{isClear:clear['stage3']}"  class="section section--clear bg-color--gray">
+        <section v-if="clear['stage2']" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
           <div class="container">
             <div class="clear-message">
-              <div class="clear-message__title">STAGE：3　「これ解けちゃうのか〜」</div>
+              <div class="clear-message__title">STAGE：2　「これ解けちゃうのか〜」</div>
               <div class="clear-message__content">「これ大事にしなよ？」とまた鍵を渡された<br>
                 これで全ての場所の謎を解いた、ホームに戻ってみよう！</div>
-                <button v-on:click="nextStage('stage4')" onclick="location.href='#sectionStage4'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
+                <button v-on:click="nextStage('stage3')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
             </div>
           </div>
         </section>
