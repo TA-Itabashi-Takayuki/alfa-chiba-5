@@ -40,7 +40,7 @@ const app = Vue.createApp({
       */
       answer: {
         stage1: [
-          true,
+          false,
         ],
         stage2: [
           false, // 2-1
@@ -59,7 +59,7 @@ const app = Vue.createApp({
 
       /* ステージの問題が全て正解かどうか */
       clear: {
-        stage1: true,
+        stage1: false,
         stage2: false,
         stage3: false,
         stage4: false,  
@@ -69,7 +69,7 @@ const app = Vue.createApp({
       *  最終ステージはページを遷移するので設定不要です。
       */
       next: {
-        stage1: true,
+        stage1: false,
         stage2: false,
         stage3: false,  
       },
